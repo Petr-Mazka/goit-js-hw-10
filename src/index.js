@@ -1,9 +1,9 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { createMarkupList } from './js/createMarkuplist';
+import { createMarkupList } from './js/createMarkupList';
 import { createMarkupCard } from './js/createCountryInfo';
-import fetchCountries from './js/fetchCountries';
+import {fetchCountries} from './js/fetchCountries';
 const DEBOUNCE_DELAY = 300;
 
 const countryInput = document.querySelector('#search-box');
@@ -33,7 +33,7 @@ function renderCountries(countries) {
       Notify.info('Too many matches found. Please enter a more specific name.');
     } else if (countries.length > 1) {
       countryList.innerHTML = createMarkupList(countries);
-      onCountryListRendered(countries);
+      renderedList(countries);
     } else {
       countryInfo.innerHTML = createMarkupCard(countries);
     }
@@ -67,7 +67,7 @@ function renderedList (countries) {
         country => country.name.official === currentTarget.dataset.item
       );
   
-      render(filtered);
+      renderCountries(filtered);
   
       items.forEach(item => item.removeEventListener('click', onItem));
     }

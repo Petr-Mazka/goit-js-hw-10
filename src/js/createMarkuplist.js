@@ -3,7 +3,7 @@ export function createMarkupList(countries) {
       .map(
         ({ name: { official }, flags: { svg } }) =>
           `<li class="country-list__item" data-item="${official}">
-            <img src="${svg}" alt="${official}" width=30 >
+            <img src="${svg}" class="country-image" alt="${official}" width=30 >
             <p class="country-name">${official}</p>
           </li>`
       )

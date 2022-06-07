@@ -10,11 +10,12 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  background-image: url(https://source.unsplash.com/1920x1080?landscape);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #search-box {
@@ -24,17 +25,39 @@ body {
   margin-bottom: 16px;
 }
 
-.country-input{
-  width: 300px;
-  height: 50px;
-  background-color: inherit;
-  border-radius: 5px;
-  border: thick double darkgreen;
-  margin-top: 30px;
+.country-list__item{
+  border: #212121 1px dashed;
+  padding: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
 }
 
-.country-input:focus,
-.country-input:hover {
-  border-color: #00bcd4;
-  outline: none;
+.country-list{
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.country-image{
+  width: 30px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.country-list__item:hover,
+.country-list__item:focus{
+  border: #01796f 2px dashed;
+}
+
+.country-span{
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.country-name-off{
+  font-weight: normal;
+  font-size: 35px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
