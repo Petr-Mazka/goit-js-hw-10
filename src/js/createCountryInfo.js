@@ -1,0 +1,22 @@
+export function createMarkupCard(countries) {
+    return countries
+      .map(country => {
+        const {
+          name: { official },
+          capital,
+          population,
+          flags: { svg },
+          languages,
+        } = country;
+        const langString = Object.values(languages).join(',');
+  
+        return `<div class="country-title"><img src="${svg}" alt="${official}" width=50>
+        <p class="country-name">${official}</p></div>
+          <ul class="country-info__list">
+            <li class="country-item"><span>Capital:</span>${capital}</li>
+            <li class="country-item"><span>Population:</span>${population}</li>
+            <li class="country-item"><span>Languages:</span>${langString}</li>
+          </ul>`;
+      })
+      .join('');
+  }
